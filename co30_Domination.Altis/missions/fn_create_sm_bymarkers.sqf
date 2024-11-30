@@ -80,7 +80,7 @@ __TRACE_1("","_eee")
 #endif
 
 {
-	__TRACE_1("","_x")
+	__TRACE_1("Sidemisson","_x")
 	private _curmar = _x;
 	private _marar = _curmar splitString "|";
 	__TRACE_1("","_marar")
