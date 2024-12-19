@@ -12857,7 +12857,19 @@
 <Russian>Stubbhult civilians (CFP) (static only, walking units not supported)</Russian>
 <Chinesesimp>Stubbhult civilians (CFP) (static only, walking units not supported)</Chinesesimp>
 <Chinese>Stubbhult civilians (CFP) (static only, walking units not supported)</Chinese>
-<French>Stubbhult civilians (CFjP) (static only, walking units not supported)</French>
+<French>Stubbhult civilians (CFP) (static only, walking units not supported)</French>
+</Key>
+<Key ID="STR_DOM_MISSIONSTRING_CIV_TYPE_CFP_VT7">
+<English>Virolathi civilians (CFP) (static only, walking units not supported)</English>
+<Spanish>Virolathi civilians (CFP) (static only, walking units not supported)</Spanish>
+<Portuguese>Virolathi civilians (CFP) (static only, walking units not supported)</Portuguese>
+<Korean>Virolathi 시민 (CFP) (고정만 가능, 걸어가는 시민은 지원하지 않습니다)</Korean>
+<Japanese>Virolathi civilians (CFP) (static only, walking units not supported)</Japanese>
+<Original>Virolathi civilians (CFP) (static only, walking units not supported)</Original>
+<Russian>Virolathi civilians (CFP) (static only, walking units not supported)</Russian>
+<Chinesesimp>Virolathi civilians (CFP) (static only, walking units not supported)</Chinesesimp>
+<Chinese>Virolathi civilians (CFP) (static only, walking units not supported)</Chinese>
+<French>Virolathi civilians (CFP) (static only, walking units not supported)</French>
 </Key>
 <Key ID="STR_DOM_MISSIONSTRING_CIV_TYPE_CFP_MIDDLE_EAST">
 <English>Middle East civilians (CFP) (static only, walking units not supported)</English>

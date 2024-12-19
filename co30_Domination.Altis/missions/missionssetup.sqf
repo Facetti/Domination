@@ -1,5 +1,5 @@
 // by Xeno
-//#define __DEBUG__
+#define __DEBUG__
 #include "..\x_setup.sqf"
 
 // I'm using x_mXX.sqf for the mission filename where XX (index number) has to be added to d_sm_array
@@ -15,6 +15,10 @@ d_sm_array =
 	61,62,63,64,65,66,67,68,69,70,71,72,73,74,100,101,102,103,104,105,106];
 #endif
 #ifdef __STUBBHULT__
+d_sm_array =
+	[];
+#endif
+#ifdef __VT7__
 d_sm_array =
 	[];
 #endif
@@ -145,6 +149,13 @@ if (isServer) then {
 	};
 #endif
 #ifdef __STUBBHULT__
+	d_sm_convoy_vehicles = switch (d_enemy_side_short) do {
+		case "E": {["O_MRAP_02_hmg_F","O_APC_Wheeled_02_rcws_F", "O_Truck_03_ammo_F", "O_APC_Wheeled_02_rcws_F"]};
+		case "W": {["B_MRAP_01_hmg_F","B_APC_Wheeled_01_cannon_F", "B_Truck_01_ammo_F", "B_APC_Wheeled_01_cannon_F"]};
+		case "G": {["I_MRAP_03_gmg_F","I_APC_tracked_03_cannon_F", "I_MBT_03_cannon_F", "I_Truck_02_ammo_F", "I_APC_tracked_03_cannon_F"]};
+	};
+#endif
+#ifdef __VT7__
 	d_sm_convoy_vehicles = switch (d_enemy_side_short) do {
 		case "E": {["O_MRAP_02_hmg_F","O_APC_Wheeled_02_rcws_F", "O_Truck_03_ammo_F", "O_APC_Wheeled_02_rcws_F"]};
 		case "W": {["B_MRAP_01_hmg_F","B_APC_Wheeled_01_cannon_F", "B_Truck_01_ammo_F", "B_APC_Wheeled_01_cannon_F"]};

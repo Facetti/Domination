@@ -57,6 +57,11 @@ d_stubbhult = true;
 d_stubbhult = false;
 #endif
 
+#ifdef __VT7__
+d_vt7 = true;
+#else
+d_vt7 = false;
+#endif
 #ifndef __RHS__
 d_rhs = false;
 #else
@@ -114,7 +119,7 @@ d_spe = false;
 #ifndef __JSDF__
 d_jsdf = false;
 #else
-d_jsdf = true;
+j = true;
 #endif
 
 d_kbtel_chan = "SIDE";
@@ -216,6 +221,9 @@ d_e_marker_color_alpha = 0.8;
 #ifdef __STUBBHULT__
 #include "sm_bonus_vec_ar_altis.sqf"
 #endif
+#ifdef __VT7__
+#include "sm_bonus_vec_ar_altis.sqf"
+#endif
 #ifdef __CUP_CHERNARUS__
 #include "sm_bonus_vec_ar_cup.sqf"
 #endif
@@ -281,6 +289,9 @@ d_e_marker_color_alpha = 0.8;
 #include "mt_bonus_vec_ar_altis.sqf"
 #endif
 #ifdef __STUBBHULT__
+#include "mt_bonus_vec_ar_altis.sqf"
+#endif
+#ifdef __VT7__
 #include "mt_bonus_vec_ar_altis.sqf"
 #endif
 #ifdef __LIVONIA__
@@ -442,6 +453,9 @@ d_cargotower =
 #ifdef __STUBBHULT__
 	"Land_Cargo_Tower_V3_F";
 #endif
+#ifdef __VT7__
+	"Land_Cargo_Tower_V3_F";
+#endif
 #ifdef __CUP_CHERNARUS__
 	"Land_Cargo_Tower_V1_F";
 #endif
@@ -496,6 +510,9 @@ d_wcamp =
 	"Land_Cargo_Patrol_V1_F";
 #endif
 #ifdef __STUBBHULT__
+	"Land_Cargo_Patrol_V1_F";
+#endif
+#ifdef __VT7__
 	"Land_Cargo_Patrol_V1_F";
 #endif
 #ifdef __CUP_CHERNARUS__
@@ -994,6 +1011,9 @@ if (isServer) then {
 #ifdef __STUBBHULT__
 #include "d_allmen_O_default.sqf"
 #endif
+#ifdef __VT7__
+#include "d_allmen_O_default.sqf"
+#endif
 #ifdef __LIVONIA__
 #include "d_allmen_O_tanoa.sqf"
 #endif
@@ -1110,6 +1130,9 @@ if (!d_gmcwgwinter) then {
 #ifdef __STUBBHULT__
 #include "d_allmen_G_default.sqf"
 #endif
+#ifdef __VT7__
+#include "d_allmen_G_default.sqf"
+#endif
 #ifdef __LIVONIA__
 #include "d_allmen_G_default.sqf"
 #endif
@@ -1168,6 +1191,9 @@ if (!d_gmcwgwinter) then {
 #include "d_specops_O_default.sqf"
 #endif
 #ifdef __STUBBHULT__
+#include "d_specops_O_default.sqf"
+#endif
+#ifdef __VT7__
 #include "d_specops_O_default.sqf"
 #endif
 #ifdef __LIVONIA__
@@ -1387,6 +1413,9 @@ if (!d_pracs) then {
 #ifdef __STUBBHULT__
 #include "d_veh_a_O_default.sqf"
 #endif
+#ifdef __VT7__
+#include "d_veh_a_O_default.sqf"
+#endif
 #ifdef __LIVONIA__
 #include "d_veh_a_O_tanoa.sqf"
 #endif
@@ -1510,6 +1539,9 @@ d_arti_observer_W = [["B_recon_JTAC_F"]];
 #ifdef __STUBBHULT__
 	d_arti_observer_E = [["O_recon_JTAC_F"]];
 #endif
+#ifdef __VT7__
+	d_arti_observer_E = [["O_recon_JTAC_F"]];
+#endif
 #ifdef __LIVONIA__
 	d_arti_observer_E = [["O_T_Recon_JTAC_F"]];
 #endif
@@ -1587,6 +1619,9 @@ d_arti_observer_W = [["B_recon_JTAC_F"]];
 	d_divers_E = [["East","OPF_F","SpecOps","OI_diverTeam"] call d_fnc_GetConfigGroup];
 #endif
 #ifdef __STUBBHULT__
+	d_divers_E = [["East","OPF_F","SpecOps","OI_diverTeam"] call d_fnc_GetConfigGroup];
+#endif
+#ifdef __VT7__
 	d_divers_E = [["East","OPF_F","SpecOps","OI_diverTeam"] call d_fnc_GetConfigGroup];
 #endif
 #ifdef __MALDEN__
@@ -1891,6 +1926,9 @@ d_arti_observer_W = [["B_recon_JTAC_F"]];
 #include "d_compositions_default.sqf"
 #endif
 #ifdef __STUBBHULT__
+#include "d_compositions_default.sqf"
+#endif
+#ifdef __VT7__
 #include "d_compositions_default.sqf"
 #endif
 #ifdef __LIVONIA__
@@ -2210,6 +2248,9 @@ d_arti_observer_W = [["B_recon_JTAC_F"]];
 #include "d_sm_classes_default.sqf"
 #endif
 #ifdef __STUBBHULT__
+#include "d_sm_classes_default.sqf"
+#endif
+#ifdef __VT7__
 #include "d_sm_classes_default.sqf"
 #endif
 #ifdef __LIVONIA__
@@ -2535,6 +2576,18 @@ if (d_with_airdrop == 2) then {
 		["I_Heli_Transport_02_F"]
 	};
 #endif
+#ifdef __VT7__
+	// enemy parachute troops transport chopper
+	d_transport_chopper = call {
+		if (d_enemy_side_short == "E") exitWith {
+			["O_T_VTOL_02_infantry_grey_F"]
+		};
+		if (d_enemy_side_short == "W") exitWith {
+			["B_T_VTOL_01_infantry_blue_F"]
+		};
+		["I_Heli_Transport_02_F"]
+	};
+#endif
 #ifdef __GMCWG__
 	// enemy parachute troops transport chopper
 	d_transport_chopper = call {
@@ -2846,6 +2899,9 @@ if (d_with_airdrop == 2) then {
 #ifdef __STUBBHULT__
 		"Land_Cargo_HQ_V1_F";
 #endif
+#ifdef __VT7__
+		"Land_Cargo_HQ_V1_F";
+#endif
 #ifdef __CUP_CHERNARUS__
 		"Land_Cargo_HQ_V4_F";
 #endif
@@ -2900,6 +2956,9 @@ if (d_with_airdrop == 2) then {
 		"Land_BagBunker_Small_F";
 #endif
 #ifdef __STUBBHULT__
+		"Land_BagBunker_Small_F";
+#endif
+#ifdef __VT7__
 		"Land_BagBunker_Small_F";
 #endif
 #ifdef __CUP_CHERNARUS__
@@ -3516,6 +3575,11 @@ if (d_with_airdrop == 2) then {
 		"CFP_C_STUBBHULT_Civilian_02", 1
 	];
 	
+	d_civ_faction_cfp_stubbhult - [
+		"CFP_C_VT7_Civilian_01", 1,
+		"CFP_C_VT_Civilian_02", 1
+	];
+	
 	d_civ_faction_cfp_middle_east = [
 		"CFP_C_ME_Civ_1_01", 1,
         "CFP_C_ME_Civ_2_01", 1
@@ -3528,6 +3592,11 @@ if (d_with_airdrop == 2) then {
 	d_civArray = d_euroCivs;
 #endif
 #ifdef __STUBBHULT__
+	d_civ_vehicles_weighted = d_civVehiclesWeightedCityWealthHigh;
+	d_civ_faces = _mixedFaces;
+	d_civArray = d_euroCivs;
+#endif
+#ifdef __VT7__
 	d_civ_vehicles_weighted = d_civVehiclesWeightedCityWealthHigh;
 	d_civ_faces = _mixedFaces;
 	d_civArray = d_euroCivs;
