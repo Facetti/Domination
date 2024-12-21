@@ -22,6 +22,10 @@ d_sm_array =
 d_sm_array =
 	[];
 #endif
+#ifdef __KUNDUZ__
+d_sm_array =
+	[];
+#endif
 #ifdef __CUP_CHERNARUS__
 d_sm_array =
 	[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,
@@ -156,6 +160,13 @@ if (isServer) then {
 	};
 #endif
 #ifdef __VT7__
+	d_sm_convoy_vehicles = switch (d_enemy_side_short) do {
+		case "E": {["O_MRAP_02_hmg_F","O_APC_Wheeled_02_rcws_F", "O_Truck_03_ammo_F", "O_APC_Wheeled_02_rcws_F"]};
+		case "W": {["B_MRAP_01_hmg_F","B_APC_Wheeled_01_cannon_F", "B_Truck_01_ammo_F", "B_APC_Wheeled_01_cannon_F"]};
+		case "G": {["I_MRAP_03_gmg_F","I_APC_tracked_03_cannon_F", "I_MBT_03_cannon_F", "I_Truck_02_ammo_F", "I_APC_tracked_03_cannon_F"]};
+	};
+#endif
+#ifdef __KUNDUZ__
 	d_sm_convoy_vehicles = switch (d_enemy_side_short) do {
 		case "E": {["O_MRAP_02_hmg_F","O_APC_Wheeled_02_rcws_F", "O_Truck_03_ammo_F", "O_APC_Wheeled_02_rcws_F"]};
 		case "W": {["B_MRAP_01_hmg_F","B_APC_Wheeled_01_cannon_F", "B_Truck_01_ammo_F", "B_APC_Wheeled_01_cannon_F"]};
